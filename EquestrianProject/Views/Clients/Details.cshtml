@@ -1,0 +1,130 @@
+﻿@model EquestrianProject.Models.Client
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Client</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.EquestrianType.EquestrianTypeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EquestrianType.EquestrianTypeName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SubscriptionPlan.SubscriptionPlanName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SubscriptionPlan.SubscriptionPlanName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ClientName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClientName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gender)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gender)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateOfParticipation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateOfParticipation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BirthDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BirthDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhoneNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReferedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReferedBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PriceCost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PriceCost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Discount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Discount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PaidCost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PaidCost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RemainingCost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RemainingCost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Notes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Notes)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ClientID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

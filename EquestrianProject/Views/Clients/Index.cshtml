@@ -1,0 +1,147 @@
+﻿@model IEnumerable<EquestrianProject.Models.Client>
+
+@{
+    ViewBag.Title = "Clients";
+}
+<style>
+    tbody tr:nth-child(odd) {
+        background-color: #ff33cc;
+    }
+
+    tbody tr:nth-child(even) {
+        background-color: #e495e4;
+    }
+
+    tbody tr {
+/*        background-image: url(noise.png);
+*/    }
+
+    table {
+        background-color: #ff33cc;
+    }
+</style>
+<h1>Clients</h1>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table-responsive table-bordered table-info bg-info" data-replace="jtable" id="example" aria-label="JS Datatable" data-locale="en" data-search="true">
+    <thead>
+
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ClientID)
+            </th>
+            <th>
+                Client Name
+            </th>
+            <th>
+                Equestrian Type
+            </th>
+            <th>
+                Subscription Plan
+            </th>
+
+            @*<th>
+                @Html.DisplayNameFor(model => model.Gender)
+            </th>*@
+            <th>
+                Date Of Participation
+            </th>
+            @*<th>
+                Birth Date
+            </th>*@
+            @*<th>
+
+                Phone Number
+            </th>*@
+            @*<th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>*@
+            <th>
+                Refered By
+            </th>
+            <th>
+                Price Cost
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Discount)
+            </th>
+            <th>
+                Paid Cost
+            </th>
+            <th>
+                Remaining Cost
+
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.Notes)
+            </th>*@
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ClientID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ClientName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EquestrianType.EquestrianTypeName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SubscriptionPlan.SubscriptionPlanName)
+                </td>
+
+                <!--<td>-->
+                    @*@Html.DisplayFor(modelItem => item.Gender)*@
+                <!--</td>-->
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateOfParticipation)
+                </td>
+                @*<td>
+                    @Html.DisplayFor(modelItem => item.BirthDate)
+                </td>*@
+                @*<td>
+                    @Html.DisplayFor(modelItem => item.PhoneNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.ReferedBy)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PriceCost)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Discount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PaidCost)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RemainingCost)
+                </td>
+                @*<td>
+                    @Html.DisplayFor(modelItem => item.Notes)
+                </td>*@
+            <td>
+                @*<a class="btn" href="/Clients/Edit/"+new { id = item.ClientID }><i class="icon-edit"></i> Edit</a>*@
+
+                @Html.ActionLink("Edit", "Edit", new { id = item.ClientID }, new { @class = "icon-edit" }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ClientID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ClientID })|
+                @Html.ActionLink("Print", "Print", new { id = item.ClientID })
+            </td>
+            </tr>
+
+
+        }
+    </tbody>
+  
+
+</table>

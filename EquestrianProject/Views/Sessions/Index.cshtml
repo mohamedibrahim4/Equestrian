@@ -1,0 +1,58 @@
+﻿@model IEnumerable<EquestrianProject.Models.Session>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Session</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+@*<table class="table">*@
+<table class="table-responsive table-bordered table-info bg-info" data-replace="jtable" id="example2" aria-label="JS Datatable" data-locale="en" data-search="true">
+    <thead>
+
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.SessionNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SessionDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Client.ClientID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Client.ClientName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SessionNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SessionDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Client.ClientID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Client.ClientName)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.SessionID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.SessionID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.SessionID })
+            </td>
+        </tr>
+        }
+    </tbody>
+
+</table>
